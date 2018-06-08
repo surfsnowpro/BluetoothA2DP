@@ -7,12 +7,21 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btn_discover"
+        android:id="@+id/get_a2dp_sink_proxy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Make Discoverable"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:text="Get A2DP Sink Proxy"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/get_a2dp_proxy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get A2DP Proxy"
+        android:paddingTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/get_a2dp_sink_proxy" />
+
 
 </android.support.constraint.ConstraintLayout>

@@ -30,14 +30,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button button = findViewById(R.id.btn_discover);
-        button.setOnClickListener(view -> {
+        Button a2dpSinkButton = findViewById(R.id.get_a2dp_sink_proxy);
+        Button a2dpButton = findViewById(R.id.get_a2dp_proxy);
+        a2dpSinkButton.setOnClickListener(view -> {
             // This seems to hand on the onBind() method in the BluetoothA2dpSink.java class
             // No errors are being thrown.
             bluetoothAdapter.getProfileProxy(this, profileServiceListener, A2dpSinkHelper.A2DP_SINK_PROFILE);
+            Log.d(TAG, "onCreate: getting a2dp sink profile proxy");
+        });
+        a2dpButton.setOnClickListener(view -> {
             // When using A2DP, we get a callback to the ServiceListener that we've received the proxy
-//            bluetoothAdapter.getProfileProxy(this, profileServiceListener, BluetoothProfile.A2DP);
-            Log.d(TAG, "onCreate: getting a2dp profile");
+            bluetoothAdapter.getProfileProxy(this, profileServiceListener, BluetoothProfile.A2DP);
+            Log.d(TAG, "onCreate: getting a2dp profile proxy");
         });
 
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
