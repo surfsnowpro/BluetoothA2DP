@@ -1,5 +1,7 @@
 # Current Status:
-Currently, pressing the "GET PROXY" button will attempt to retrieve the A2dp sink profile and proxy. There is a log 
+Currently, pressing the "GET A2DP PROXY" button will retrieve the profile proxy associated with the A2DP profile. Since
+A2DP Source is enabled by default, this returns what we ask for (but don't need, in this case).
+Pressing the "GET A2DP SINK PROXY" button will attempt to retrieve the A2dp sink profile and proxy. There is a log 
 statement which says the following when this is attempted:
 
 `06-08 10:10:42.739 4481-4481/com.example.jimbo.bluetootha2dp D/BluetoothA2dpSink: doBind(): CallingUid(myUserHandle) = 0`
